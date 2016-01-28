@@ -222,7 +222,7 @@ namespace SQLite.Net
             return string.Join(Environment.NewLine, parts);
         }
 
-        private IDbStatement Prepare()
+        public IDbStatement Prepare()
         {
             var stmt = _sqlitePlatform.SQLiteApi.Prepare2(_conn.Handle, CommandText);
             BindAll(stmt);
